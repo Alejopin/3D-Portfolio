@@ -1,10 +1,21 @@
-
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import { Home, About, Projects, Contact } from './pages'
 
 const App = () => {
+
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <main className="flex flex-col items-center justify-center min-h-screen py-2">
+      <Router>
+        <Navbar  />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Projects />} />
+          <Route path="/about" element={<Contact />} />
+        </Routes>
+      </Router>
+    </main>
   )
 }
 
